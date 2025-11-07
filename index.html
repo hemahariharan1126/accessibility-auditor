@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Auditor</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-badge">♿</div>
+            <div>
+                <h1>Accessibility Auditor</h1>
+                <p class="subtitle">Effortlessly check any website for accessibility & inclusive design</p>
+            </div>
+        </header>
+
+        <main>
+            <form class="input-section" onsubmit="runAudit(); return false;">
+                <input 
+                    type="url"
+                    id="urlInput"
+                    placeholder="Enter website URL (e.g., https://example.com)"
+                    required
+                    class="url-input"
+                >
+                <button type="submit" id="auditBtn" class="primary-btn">Run Audit</button>
+            </form>
+
+            <div class="button-row">
+                <button id="colorBlindBtn" class="secondary-btn">Simulate Protanopia</button>
+                <button id="pdfExportBtn" class="secondary-btn">Download PDF Report</button>
+                <button id="htmlExportBtn" class="secondary-btn">Download HTML Report</button>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Running accessibility checks...</p>
+            </div>
+
+            <div id="results" class="hidden audit-results-card">
+                <div class="summary"></div>
+                <div class="critical-section"></div>
+                <div class="warnings-section"></div>
+                <div class="passed-section"></div>
+                <div class="suggestions-section"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="public/js/main.js"></script>
+
+    <svg width="0" height="0" style="position: absolute;">
+        <filter id="protanopia">
+            <feColorMatrix type="matrix"
+                values="0.567 0.433 0     0 0
+                        0.558 0.442 0     0 0
+                        0     0.242 0.758 0 0
+                        0     0     0     1 0"/>
+        </filter>
+    </svg>
+</body>
+</html>
