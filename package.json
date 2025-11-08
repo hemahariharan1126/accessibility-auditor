@@ -14,11 +14,15 @@
   ],
   "author": "Hema Hariharan",
   "license": "MIT",
+ {
   "dependencies": {
     "express": "^4.18.2",
-    "puppeteer": "^21.0.0",
-    "puppeteer-core": "^21.0.0",
+    "puppeteer": "^23.0.0",
+    "puppeteer-core": "^23.0.0",
     "@sparticuz/chromium": "^119.0.0"
+  }
+}
+
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
