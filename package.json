@@ -1,17 +1,13 @@
 {
   "name": "accessibility-auditor",
   "version": "1.0.0",
-  "description": "Web accessibility auditor with Express and Puppeteer",
+  "description": "Web accessibility auditor",
   "main": "src/server/server.js",
   "scripts": {
     "dev": "nodemon src/server/server.js",
     "start": "node src/server/server.js"
   },
-  "keywords": [
-    "accessibility",
-    "audit",
-    "wcag"
-  ],
+  "keywords": ["accessibility", "audit", "wcag"],
   "author": "Hema Hariharan",
   "license": "MIT",
   "dependencies": {
